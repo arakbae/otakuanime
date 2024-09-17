@@ -1,0 +1,25 @@
+{
+  "name": "otakuanime",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./services/load": "./services/load.js",
+    "./services/ongoing": "./services/ongoing.js"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "hapi framework"
+  ],
+  "author": "ryugenxd",
+  "license": "MIT",
+  "description": "simple api using hapi framework",
+  "dependencies": {
+    "@hapi/hapi": "^21.3.10",
+    "axios": "^1.7.7",
+    "cheerio": "^1.0.0"
+  }
+}
