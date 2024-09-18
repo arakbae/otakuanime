@@ -11,8 +11,11 @@ const initialization = async function () {
   server.route({
     method: "GET",
     path: "/",
-    handler: async function(){
-      return await Ongoing();
+    handler: async function(request){
+      if(request.query.pagination != undefined){
+        return await Ongoing(request.query.pagination);
+      }
+      return await Ongoing(null);
     }
   });
 

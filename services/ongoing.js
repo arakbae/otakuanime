@@ -1,10 +1,52 @@
 import { Anime } from "otakuanime/services/load";
 import * as cheerio  from "cheerio";
 
+const maxPagination = async ()=>{
+  const content = (await Anime.get(`ongoing-anime`)).data;
+  const $ = cheerio.loadBuffer(Buffer.from(content));
+  const load = $('.pagination').children().eq(0);
+  const list_numbers = [];
+ 
+  load.find('.pagenavix > a').each(function(){
+    if($(this).text().match(/(\d)/)){
+      list_numbers.push(Number($(this).text()));
+    }
+  });
+  let lg_number = list_numbers[0];
+  list_numbers.map((num,index)=>{
+   if(num > lg_number) {
+    lg_number = list_numbers[index+1];
+   }
+  })
+  return lg_number;
+}
 
-const Ongoing = async () => {
+const Ongoing = async (pagination) => {
   const animeOngoing = [];
-  await Anime.get("ongoing-anime").then(({data})=>{ 
+  let path = `ongoing-anime`;
+  if(pagination != null){
+    if(!pagination.match(/(\d)/)){
+        return {
+          code:"400",
+          status:"failed",
+          data:{
+            message:"pagination instead of the numbers "
+          }
+        }
+    }
+    if(Number(pagination) > await maxPagination() || Number(pagination) <= 1){
+      return {
+        code:"404",
+        status:"failed",
+        data:{
+          message:"not found"
+        }
+      }
+    }
+    path += `/page/${pagination}`;
+  }
+  
+  await Anime.get(path).then(({data})=>{ 
   const $ = cheerio.load(data);
   const load = $('.venz').children().eq(0);
   load.find("ul > li").each(function () {
