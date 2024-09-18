@@ -1,8 +1,21 @@
-###
+### get ongoing anime
 
 GET https://localhost:8000
 Accept : application/json
 
-{
-    pagination:2
-}
+
+### get ongoing anime with pagination success
+
+GET https://localhost:8000?pagination=2
+Accept : application/json
+
+
+### get ongoing anime with pagination failed instead of numbers 
+
+GET https://localhost:8000?pagination=test
+Accept : application/json
+
+### get ongoing anime with pagination failed notfound 
+
+GET https://localhost:8000?pagination=1
+Accept : application/json
