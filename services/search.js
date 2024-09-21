@@ -6,7 +6,7 @@ export const Search = async (query)=>{
     const anime = [];
     if(query.length == 0){
         return {
-            code:"404",
+            code:404,
             status:"failed",
             data:{
                 message:"not found"
@@ -25,12 +25,12 @@ export const Search = async (query)=>{
         const cover = this_element.find("img").attr("src");
         const title = this_element.find("h2").text();
         const link = this_element.find("h2 > a").attr("href");
-        const gendres = [];
+        const genres = [];
         this_element.find('div.set > a').each(function(){
-            gendres.push({name:$(this).text(),link:$(this).attr('href')});
+            genres.push({name:$(this).text(),link:$(this).attr('href')});
         });
         const desc = this_element.find("div.set").text().split(':');
-        const data = {cover:cover,link:link,title:title,gendres:gendres};
+        const data = {cover:cover,link:link,title:title,genres:genres};
         data[desc[2].trim()] = desc[3];
         anime.push(data);
     });

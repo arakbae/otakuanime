@@ -27,7 +27,7 @@ const Ongoing = async (pagination) => {
   if(pagination != null){
     if(!pagination.match(/(\d)/)){
         return {
-          code:"400",
+          code:404,
           status:"failed",
           data:{
             message:"pagination instead of the numbers "
@@ -36,7 +36,7 @@ const Ongoing = async (pagination) => {
     }
     if(Number(pagination) > await maxPagination() || Number(pagination) <= 1){
       return {
-        code:"404",
+        code:404,
         status:"failed",
         data:{
           message:"not found"

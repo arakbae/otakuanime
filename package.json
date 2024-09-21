@@ -7,7 +7,9 @@
     ".": "./index.js",
     "./services/load": "./services/load.js",
     "./services/ongoing": "./services/ongoing.js",
-    "./services/search":"./services/search.js"
+    "./services/search": "./services/search.js",
+    "./services/completed":"./services/completed.js",
+    "./services/genres":"./services/genres.js"
   },
   "scripts": {
     "start": "node index.js",
@@ -30,8 +32,8 @@
     "cheerio": "^1.0.0"
   },
   "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.25.4",
     "@babel/preset-env": "^7.25.4",
-    "@babel/runtime": "^7.25.6",
     "babel-jest": "^29.7.0",
     "jest": "^29.7.0"
   }

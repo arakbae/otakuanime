@@ -1,5 +1,5 @@
 import axios from "axios";
-
+export const BaseUrl = "https://otakudesu.cloud";
 class Load {
   constructor(url) {
     this.url = url;
@@ -20,6 +20,6 @@ class Load {
   }
 }
 
-const Anime = new Load("https://otakudesu.cloud");
+const Anime = new Load(BaseUrl);
 
 export { Anime};

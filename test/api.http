@@ -24,3 +24,13 @@ Accept : application/json
 
 GET http://localhost:8000/search?q=one+piece
 Accept : application/json
+
+### get anime completed 
+
+GET http://localhost:8000/completed
+Accept : application/json
+
+### get genres 
+
+GET http://localhost:8000/genres
+Accept : application/json
