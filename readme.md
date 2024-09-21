@@ -6,7 +6,7 @@
 | --- | --- | --- |
 | **Ongoing Anime** | `GET /ongoing?pagination=<number>` | ✅ |
 | **Complete Anime** | `GET /completed?pagination=<number>` | ✅ |
-| **Seach Anime** | `GET /search?q=<query>` | ✅ |
+| **Search Anime** | `GET /search?q=<query>` | ✅ |
 | **Genres Anime** | `GET /genres` | ✅ |
 
 
