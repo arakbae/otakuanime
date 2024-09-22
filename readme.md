@@ -8,6 +8,7 @@
 | **Complete Anime** | `GET /completed?pagination=<number>` | ✅ |
 | **Search Anime** | `GET /search?q=<query>` | ✅ |
 | **Genres Anime** | `GET /genres` | ✅ |
+| **Detail Anime** | `GET /detail?id=<id_name>` | ✅ |
 
 
 ____
