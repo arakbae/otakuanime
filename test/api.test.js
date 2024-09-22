@@ -2,6 +2,7 @@ import Ongoing from "../services/ongoing.js";
 import { Search } from "../services/search.js";
 import Completed from "../services/completed.js";
 import Genres from "../services/genres.js";
+import Detail from "../services/detail.js";
 
 describe("Ongoing Anime !",function(){
     it("Should be response code equals to 200",async ()=>{
@@ -35,3 +36,15 @@ describe("Anime Gendres !",function(){
         expect(response.code).toBe(200);
     });
 });
+
+describe("Anime Detail !",function(){
+    it("Should be response code equals to 200",async function () {
+      const response = await Detail("1piece-sub-indo");
+      expect(response.code).toBe(200);
+    });
+
+    it("Should be response code equals to 404",async function(){
+        const response = await Detail(null);
+        expect(response.code).toBe(404);
+    });
+})
