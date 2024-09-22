@@ -34,3 +34,8 @@ Accept : application/json
 
 GET http://localhost:8000/genres
 Accept : application/json
+
+### get detail
+
+GET http://localhost:8000/detail?id=1piece-sub-indo
+Accept : application/json

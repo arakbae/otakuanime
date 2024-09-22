@@ -4,6 +4,7 @@ import Ongoing from "otakuanime/services/ongoing";
 import { Search } from "otakuanime/services/search";
 import Genres from "otakuanime/services/genres";
 import Completed from "otakuanime/services/completed";
+import Detail from "otakuanime/services/detail";
 
 const initialization = async function () {
   const server = Hapi.server({
@@ -49,6 +50,18 @@ const initialization = async function () {
       return await Genres();
     }
   });
+
+  server.route({
+    method:"GET",
+    path:"/detail",
+    handler:async function (request) {
+      if(request.query.id){
+        return await Detail(request.query.id); 
+      }else{
+        return await Detail(null);
+      }
+    }
+  })
 
   server.start();
   console.log(`Server running in port 8000`);

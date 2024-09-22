@@ -9,7 +9,8 @@
     "./services/ongoing": "./services/ongoing.js",
     "./services/search": "./services/search.js",
     "./services/completed":"./services/completed.js",
-    "./services/genres":"./services/genres.js"
+    "./services/genres":"./services/genres.js",
+    "./services/detail":"./services/detail.js"
   },
   "scripts": {
     "start": "node index.js",
