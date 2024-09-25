@@ -2,7 +2,7 @@ import Hapi from "@hapi/hapi";
 import process from "node:process";
 import Ongoing from "otakuanime/services/ongoing";
 import { Search } from "otakuanime/services/search";
-import Genres from "otakuanime/services/genres";
+import Genres, { Genre } from "otakuanime/services/genres";
 import Completed from "otakuanime/services/completed";
 import Detail from "otakuanime/services/detail";
 
@@ -50,6 +50,27 @@ const initialization = async function () {
       return await Genres();
     }
   });
+
+  server.route({
+    method:"GET",
+    path:"/genre",
+    handler: async function (request) {
+     if(request.query.name && request.query.page) {
+      if(!request.query.page.match(/(\d)/)){
+        return {
+          code:401,
+          status:"failed",
+          data:{
+            message:"query page instead of the type numbers"
+          }
+        }
+      }
+      return await Genre(request.query.name,request.query.page);
+     }else{
+      return await Genre(request.query.name,null);
+     }
+    }
+  })
 
   server.route({
     method:"GET",

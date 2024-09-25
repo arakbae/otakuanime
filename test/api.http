@@ -39,3 +39,13 @@ Accept : application/json
 
 GET http://localhost:8000/detail?id=1piece-sub-indo
 Accept : application/json
+
+### get anime by genre response success
+
+GET http://localhost:8000/genre?name=action
+Accept : application/json
+
+### get anime by genre and page response failed not found 
+
+GET http://localhost:8000/genre?name=action&page=1
+Accept: application/json
