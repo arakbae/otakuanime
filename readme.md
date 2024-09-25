@@ -9,7 +9,7 @@
 | **Search Anime** | `GET /search?q=<query>` | ✅ |
 | **Genres Anime** | `GET /genres` | ✅ |
 | **Detail Anime** | `GET /detail?id=<id_name>` | ✅ |
-| **Get Anime By Genre** | `GET /genre?name=<genre_name>&page=<next_page> |
+| **Get Anime By Genre** | `GET /genre?name=<genre_name>&page=<next_page>` | ✅ |
 
 ____
 
