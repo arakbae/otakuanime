@@ -10,8 +10,7 @@ import Joi from "joi";
 
 const initialization = async function () {
   const server = Hapi.server({
-    port: 8000,
-    host: "localhost"
+    port: 3000
   });
 
   server.route({
@@ -102,7 +101,7 @@ const initialization = async function () {
   })
 
   server.start();
-  console.log(`Server running in port 8000`);
+  console.log(`Server running in port 3000`);
 };
 
 process.on("unhandledRejection", (err) => {
