@@ -10,6 +10,7 @@
 | **Genres Anime** | `GET /genres` | ✅ |
 | **Detail Anime** | `GET /detail?id=<id_name>` | ✅ |
 | **Get Anime By Genre** | `GET /genre?name=<genre_name>&page=<next_page>` | ✅ |
+| **Streaming By Episode Id** | `GET /episode/streaming/<episode_id>` | ✅ |
 
 ____
 

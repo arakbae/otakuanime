@@ -8,9 +8,10 @@
     "./services/load": "./services/load.js",
     "./services/ongoing": "./services/ongoing.js",
     "./services/search": "./services/search.js",
-    "./services/completed":"./services/completed.js",
-    "./services/genres":"./services/genres.js",
-    "./services/detail":"./services/detail.js"
+    "./services/completed": "./services/completed.js",
+    "./services/genres": "./services/genres.js",
+    "./services/detail": "./services/detail.js",
+    "./services/episode":"./services/episode.js"
   },
   "scripts": {
     "start": "node index.js",
@@ -30,7 +31,8 @@
   "dependencies": {
     "@hapi/hapi": "^21.3.10",
     "axios": "^1.7.7",
-    "cheerio": "^1.0.0"
+    "cheerio": "^1.0.0",
+    "joi": "^17.13.3"
   },
   "devDependencies": {
     "@babel/plugin-transform-runtime": "^7.25.4",

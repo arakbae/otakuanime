@@ -5,6 +5,8 @@ import { Search } from "otakuanime/services/search";
 import Genres, { Genre } from "otakuanime/services/genres";
 import Completed from "otakuanime/services/completed";
 import Detail from "otakuanime/services/detail";
+import {getStreaming} from "otakuanime/services/episode";
+import Joi from "joi";
 
 const initialization = async function () {
   const server = Hapi.server({
@@ -69,6 +71,21 @@ const initialization = async function () {
      }else{
       return await Genre(request.query.name,null);
      }
+    }
+  })
+
+  server.route({
+    method:"GET",
+    path:"/episode/streaming/{episode_id}",
+    handler:async function(request){
+      return await getStreaming(request.params.episode_id);
+    },
+    options:{
+      validate:{
+        params:Joi.object({
+          episode_id:Joi.required()
+        })
+      }
     }
   })
 
