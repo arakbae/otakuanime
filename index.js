@@ -10,7 +10,10 @@ import Joi from "joi";
 
 const initialization = async function () {
   const server = Hapi.server({
-    port: 3000
+    port: 3000,
+    routes:{
+      cors:true,
+    }
   });
 
   server.route({
